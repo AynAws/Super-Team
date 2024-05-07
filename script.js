@@ -1,3 +1,74 @@
+function name() {
+    const prefix = [
+        'God Emperor ',
+        'Padishah Emperor ',
+        'Ser ',
+        'Lord ',
+        'Duke ',
+        'Emperor ',
+        'Earl ',
+        'Baron ',
+        'Count ',
+        'Viscount ',
+        'St. '
+    ]
+    const suffix = [
+        ' Jr.',
+        ' Sr.',
+        ' IX',
+        ' VI',
+        ' Ph.D.',
+        ' M.D.',
+    ]
+    let x = Math.floor(Math.random() * 19);
+    if (x === 19) {
+        let pre = prefix[Math.floor(Math.random * prefix.length)];
+    } else {
+        let pre = '';
+    }
+    let y = Math.floor(Math.random() * 9);
+    if (y === 9) {
+        let suf = suffix[Math.floor(Math.random * suffix.length)];
+    } else {
+        let suf = '';
+    }
+    const firstName = [
+        'Lionel',
+        'Varys',
+        'Bob',
+        'Johnny',
+        'Paul',
+        'Leto',
+        'Ghanima',
+        'Alia',
+        'Vladmir',
+        'Samwell',
+        'Ahmed',
+        'Daniel',
+        'Adam',
+        'Mikkel',
+        'Mikken',
+        'Gendry',
+        'Craster',
+        'Jonas',
+        'Mikasa',
+        'Grisha',
+        'Ymir',
+        'Bartosz',
+        'Cristiano'
+    ]
+    let first = firstName[Math.floor(Math.random * firstName.length)];
+    const lastName = [
+        'Harkonnen',
+        'Tiedemann',
+        'Atreides',
+        'Messi',
+        'Ronaldo'
+    ]
+    let last = lastName[Math.floor(Math.random * lastName.length)];
+    return pre + first + last + suf;
+}
+
 const teamMembers =  [
     {
         name: 'Lionel Messi',
