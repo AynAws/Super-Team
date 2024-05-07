@@ -24,6 +24,25 @@ function generateTeamCards() {
         card.classList.add('col-md-4');
         // Styling card based off of position
         let backgroundColor
+
+        switch (member.position.toLowerCase()) {
+            case 'forward':
+              backgroundColor = '#ffc107'; // Yellow for forwards
+              break;
+            case 'midfielder':
+              backgroundColor = '#28a745'; // Green for midfielders
+              break;
+            case 'defender':
+              backgroundColor = '#007bff'; // Blue for defenders
+              break;
+            case 'goalkeeper':
+              backgroundColor = '#dc3545'; // Red for goalkeepers
+              break;
+            default:
+              backgroundColor = '#6c757d'; // Gray for other positions
+          }
+
+        card.style.backgroundColor = backgroundColor;
         // Create a list of skills with li tags around each element
         const skillsList = member.skills.map(skill => `<li>${skill}</li>`).join('');
         card.innerHTML = `
