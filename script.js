@@ -1,4 +1,8 @@
-function name() {
+const n = x => Math.floor(Math.random() * x);
+
+// Generates prefix, first name, middle name/nickname, last name, suffix
+function nameGen() {
+    let pre, suf, first, last, nick;
     const prefix = [
         'God Emperor ',
         'Padishah Emperor ',
@@ -10,8 +14,11 @@ function name() {
         'Baron ',
         'Count ',
         'Viscount ',
-        'St. '
-    ]
+        'St. ',
+        'Lil ',
+        
+    ];
+
     const suffix = [
         ' Jr.',
         ' Sr.',
@@ -19,19 +26,19 @@ function name() {
         ' VI',
         ' Ph.D.',
         ' M.D.',
-    ]
-    let x = Math.floor(Math.random() * 19);
-    if (x === 19) {
-        let pre = prefix[Math.floor(Math.random * prefix.length)];
+        
+    ];
+    if (n(20) === 19) {
+        pre = prefix[n(prefix.length)];
     } else {
-        let pre = '';
+        pre = '';
     }
-    let y = Math.floor(Math.random() * 9);
-    if (y === 9) {
-        let suf = suffix[Math.floor(Math.random * suffix.length)];
+    if (n(10) === 9) {
+        suf = suffix[n(suffix.length)];
     } else {
-        let suf = '';
+        suf = '';
     }
+
     const firstName = [
         'Lionel',
         'Varys',
@@ -55,23 +62,105 @@ function name() {
         'Grisha',
         'Ymir',
         'Bartosz',
-        'Cristiano'
-    ]
-    let first = firstName[Math.floor(Math.random * firstName.length)];
+        'Cristiano',
+        'Levi',
+        'Gregory',
+        'Aaron',
+        'Brianna',
+        'Elizabeth',
+        'Emma',
+        'Gabrielle',
+        'Jake',
+        'Jayden',
+        'Kevin',
+        'Koustubha',
+        'Kyle',
+        'Mahek',
+        'Matthew',
+        'Owen',
+        'Sophia',
+        'Sunay',
+        'Viacheslav',
+        'Walder',
+        
+    ];
+    first = firstName[n(firstName.length)];
+
     const lastName = [
         'Harkonnen',
         'Tiedemann',
         'Atreides',
         'Messi',
-        'Ronaldo'
+        'Ronaldo',
+        'Ackerman',
+        'Stark',
+        'Clegane',
+        'Kilgore',
+        'Mathew',
+        'Nisenson',
+        'Pinto',
+        'Bootnik',
+        'Reznik',
+        'Kozlovsky',
+        'Tarantola',
+        'Cherichello',
+        'Yau',
+        'Piccinich',
+        'Kolla',
+        'Rabkin',
+        'Mahesh',
+        'Passantino',
+        'Chiu',
+        'Antushevich',
+        'Bhatt',
+        'Kostenko',
+        'Frey',
+        
+    ];
+    last = lastName[n(lastName.length)];
+
+    const nickName = [
+        '“The Hound”',
+        '“Littlefinger”',
+        '“The Undertaker”',
+        'De',
+        'Vi',
+        'ibn',
+        'bin',
+        'of the Knife',
+        '“Blackfish”',
+        
+    ];
+    if (n(20) === 19) {
+        nick = ` ${nickName[n(nickName.length)]} `;
+    } else {
+        nick = ' ';
+    }
+    const name = pre + first + nick + last + suf;
+    return name;
+};
+
+function positionGen() {
+    const positionArray = [
+        'Benchwarmer',
+        'Forward',
+        'Backward',
+        'Midward',
+        'Upward',
+        'Downward',
+        'Leftward',
+        'Rightward',
+        'Ward',
+        'Hostage',
+        'KindaEastButNotReallyEastLikeMoreNortheastButNotAllTheWayNortheastward',
+        'Wardward',
+        
     ]
-    let last = lastName[Math.floor(Math.random * lastName.length)];
-    return pre + first + last + suf;
 }
 
 const teamMembers =  [
     {
-        name: 'Lionel Messi',
+        name: 'placeholder',
         position: 'Forward',
         skills: ['Dribbling', 'Shooting', 'Passing'],
         strengths: 'Ball control',
@@ -79,14 +168,90 @@ const teamMembers =  [
         biography: 'lorem ipsum dolor sit amet consectuer tet.'
     },
     {
-        name: 'Lionel Messi Jr',
-        position: 'Defender',
+        name: 'placeholder',
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.'
+    },
+    {
+        name: 'placeholder',
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.'
+    },
+    {
+        name: 'placeholder',
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.'
+    },
+    {
+        name: 'placeholder',
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.'
+    },
+    {
+        name: 'placeholder',
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.'
+    },
+    {
+        name: 'placeholder',
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.'
+    },
+    {
+        name: 'placeholder',
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.'
+    },
+    {
+        name: 'placeholder',
+        position: 'Forward',
         skills: ['Dribbling', 'Shooting', 'Passing'],
         strengths: 'Ball control',
         weaknesses: 'Heading ability',
         biography: 'lorem ipsum dolor sit amet consectuer tet.'
     }
+    /*{
+        name: 'placeholder',
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.'
+    },
+    {
+        name: 'placeholder',
+        position: 'Defender',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.'
+    }*/
 ];
+
+teamMembers.forEach(member => {
+    member.name = nameGen();
+});
 
 function generateTeamCards() {
     const teamCardsContainer = document.getElementById('teamCards');
