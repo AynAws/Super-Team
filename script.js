@@ -16,7 +16,14 @@ function nameGen() {
         'Viscount ',
         'St. ',
         'Lil ',
-        'Hodor '
+        'Hodor ',
+        'Lady ',
+        'Duchess',
+        'Empress ',
+        'Queen ',
+        'Baroness ',
+        'Countess ',
+        'Viscountess '
     ];
 
     const suffix = [
@@ -155,7 +162,9 @@ function positionGen() {
         'KindaEastButNotReallyEastLikeMoreNortheastButNotAllTheWayNortheastward',
         'Wardward',
         'Hodor'
-    ]
+    ];
+    const position = positionArray[n(positionArray.length)];
+    return position;
 }
 
 const teamMembers =  [
@@ -251,6 +260,7 @@ const teamMembers =  [
 
 teamMembers.forEach(member => {
     member.name = nameGen();
+    member.position = positionGen();
 });
 
 function generateTeamCards() {
