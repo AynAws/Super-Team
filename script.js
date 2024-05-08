@@ -16,7 +16,7 @@ function nameGen() {
         'Viscount ',
         'St. ',
         'Lil ',
-        
+        'Hodor '
     ];
 
     const suffix = [
@@ -26,7 +26,7 @@ function nameGen() {
         ' VI',
         ' Ph.D.',
         ' M.D.',
-        
+        ' Hodor'
     ];
     if (n(20) === 19) {
         pre = prefix[n(prefix.length)];
@@ -82,7 +82,7 @@ function nameGen() {
         'Sunay',
         'Viacheslav',
         'Walder',
-        
+        'Hodor'
     ];
     first = firstName[n(firstName.length)];
 
@@ -115,7 +115,7 @@ function nameGen() {
         'Bhatt',
         'Kostenko',
         'Frey',
-        
+        'Hodor'
     ];
     last = lastName[n(lastName.length)];
 
@@ -129,7 +129,7 @@ function nameGen() {
         'bin',
         'of the Knife',
         '“Blackfish”',
-        
+        '“Hodor”'
     ];
     if (n(20) === 19) {
         nick = ` ${nickName[n(nickName.length)]} `;
@@ -154,7 +154,7 @@ function positionGen() {
         'Hostage',
         'KindaEastButNotReallyEastLikeMoreNortheastButNotAllTheWayNortheastward',
         'Wardward',
-        
+        'Hodor'
     ]
 }
 
