@@ -89,7 +89,12 @@ function nameGen() {
         'Sunay',
         'Viacheslav',
         'Walder',
-        'Hodor'
+        'Hodor',
+        'Lelouch',
+        'Youssef',
+        'Muhammad',
+        'Malcolm',
+        'Malik'
     ];
     first = firstName[n(firstName.length)];
 
@@ -122,7 +127,12 @@ function nameGen() {
         'Bhatt',
         'Kostenko',
         'Frey',
-        'Hodor'
+        'Hodor',
+        'Lamperogue',
+        'Ali',
+        'X',
+        'Little',
+        'Shabazz'
     ];
     last = lastName[n(lastName.length)];
 
@@ -136,7 +146,9 @@ function nameGen() {
         'bin',
         'of the Knife',
         '“Blackfish”',
-        '“Hodor”'
+        '“Hodor”',
+        'Mohamed',
+        'el-'
     ];
     if (n(20) === 19) {
         nick = ` ${nickName[n(nickName.length)]} `;
@@ -165,6 +177,13 @@ function positionGen() {
     ];
     const position = positionArray[n(positionArray.length)];
     return position;
+};
+
+function skillsGen() {
+    const skillsArray = [
+        'Headbutt'
+    ]
+    return 'good';
 }
 
 const teamMembers =  [
@@ -240,27 +259,14 @@ const teamMembers =  [
         weaknesses: 'Heading ability',
         biography: 'lorem ipsum dolor sit amet consectuer tet.'
     }
-    /*{
-        name: 'placeholder',
-        position: 'Forward',
-        skills: ['Dribbling', 'Shooting', 'Passing'],
-        strengths: 'Ball control',
-        weaknesses: 'Heading ability',
-        biography: 'lorem ipsum dolor sit amet consectuer tet.'
-    },
-    {
-        name: 'placeholder',
-        position: 'Defender',
-        skills: ['Dribbling', 'Shooting', 'Passing'],
-        strengths: 'Ball control',
-        weaknesses: 'Heading ability',
-        biography: 'lorem ipsum dolor sit amet consectuer tet.'
-    }*/
 ];
 
 teamMembers.forEach(member => {
     member.name = nameGen();
-    member.position = positionGen();
+    member.position = positionGen(); // Might change positions to not change
+    member.skills.forEach(index => {
+        member.skills[index] = 'does this work';
+    })
 });
 
 function generateTeamCards() {
@@ -269,9 +275,9 @@ function generateTeamCards() {
         const card = document.createElement('div');
         card.classList.add('col-md-4');
         // Styling card based off of position
-        let backgroundColor
+        let backgroundColor;
 
-        switch (member.position.toLowerCase()) {
+        switch (member.position.toLowerCase()) { // Needs updating when I make the new positions
             case 'forward':
               backgroundColor = '#ffc107'; // Yellow for forwards
               break;
