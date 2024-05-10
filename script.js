@@ -181,7 +181,7 @@ function positionGen() {
 
 function skillsGen() {
     const skillsArray = [
-        'Headbutting', 'Dribbling', 'Shooting', 'Passing'
+        'Headbutting', 'Dribbling', 'Shooting', 'Passing', 'Charging', 'Hazardous Material Recovery'
     ]
     const skill1 = skillsArray[n(skillsArray.length)];
     let newArray = skillsArray.filter(item => item !== skill1);
@@ -192,7 +192,12 @@ function skillsGen() {
     const skill3 = newArray[n(newArray.length)];
 
     return [skill1, skill2, skill3];
-}
+};
+
+function quipGen() {
+    const quipArray = [
+    ]
+};
 
 const teamMembers =  [
     {
