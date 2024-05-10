@@ -181,9 +181,17 @@ function positionGen() {
 
 function skillsGen() {
     const skillsArray = [
-        'Headbutt'
+        'Headbutting', 'Dribbling', 'Shooting', 'Passing'
     ]
-    return 'good';
+    const skill1 = skillsArray[n(skillsArray.length)];
+    let newArray = skillsArray.filter(item => item !== skill1);
+
+    const skill2 = newArray[n(newArray.length)];
+    newArray = newArray.filter(item => item !== skill2);
+
+    const skill3 = newArray[n(newArray.length)];
+
+    return [skill1, skill2, skill3];
 }
 
 const teamMembers =  [
@@ -264,9 +272,7 @@ const teamMembers =  [
 teamMembers.forEach(member => {
     member.name = nameGen();
     member.position = positionGen(); // Might change positions to not change
-    member.skills.forEach(index => {
-        member.skills[index] = 'does this work';
-    })
+    member.skills = skillsGen();
 });
 
 function generateTeamCards() {
