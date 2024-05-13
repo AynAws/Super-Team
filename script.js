@@ -3,6 +3,11 @@ const n = x => Math.floor(Math.random() * x); // Random number gen with the numb
 // Generates prefix, first name, middle name/nickname, last name, suffix
 function nameGen() {
     let pre, suf, first, last, nick;
+const n = x => Math.floor(Math.random() * x); // Random number gen with the number cap as a parameter x
+
+// Generates prefix, first name, middle name/nickname, last name, suffix
+function nameGen() {
+    let pre, suf, first, last, nick;
     const prefix = [
         'God Emperor ',
         'Padishah Emperor ',
@@ -26,6 +31,18 @@ function nameGen() {
         'Viscountess '
     ];
 
+        'St. ',
+        'Lil ',
+        'Hodor ',
+        'Lady ',
+        'Duchess',
+        'Empress ',
+        'Queen ',
+        'Baroness ',
+        'Countess ',
+        'Viscountess '
+    ];
+
     const suffix = [
         ' Jr.',
         ' Sr.',
@@ -37,14 +54,23 @@ function nameGen() {
     ];
     if (n(20) === 19) {
         pre = prefix[n(prefix.length)];
+        ' Hodor'
+    ];
+    if (n(20) === 19) {
+        pre = prefix[n(prefix.length)];
     } else {
+        pre = '';
         pre = '';
     }
     if (n(10) === 9) {
         suf = suffix[n(suffix.length)];
+    if (n(10) === 9) {
+        suf = suffix[n(suffix.length)];
     } else {
         suf = '';
+        suf = '';
     }
+
 
     const firstName = [
         'Lionel',
@@ -69,6 +95,38 @@ function nameGen() {
         'Grisha',
         'Ymir',
         'Bartosz',
+        'Cristiano',
+        'Levi',
+        'Gregory',
+        'Aaron',
+        'Brianna',
+        'Elizabeth',
+        'Emma',
+        'Gabrielle',
+        'Jake',
+        'Jayden',
+        'Kevin',
+        'Koustubha',
+        'Kyle',
+        'Mahek',
+        'Matthew',
+        'Owen',
+        'Sophia',
+        'Sunay',
+        'Viacheslav',
+        'Walder',
+        'Hodor',
+        'Lelouch',
+        'Youssef',
+        'Muhammad',
+        'Malcolm',
+        'Malik',
+        'Trevor',
+        'Layci',
+        'Pranshu'
+    ];
+    first = firstName[n(firstName.length)];
+
         'Cristiano',
         'Levi',
         'Gregory',
@@ -356,6 +414,8 @@ const antiTeamMembers =  [
     {
         name: 'placeholder',
         position: 'Forward',
+        name: 'placeholder',
+        position: 'Forward',
         skills: ['Dribbling', 'Shooting', 'Passing'],
         strengths: 'Ball control',
         weaknesses: 'Heading ability',
@@ -390,6 +450,7 @@ function generateTeamCards(team, teamID) {
         const card = document.createElement('div');
         card.classList.add('col-md-4');
         // Styling card based off of position
+        let backgroundColor;
         let backgroundColor;
 
         switch (member.colour.toLowerCase()) { // Needs updating when I make the new positions
@@ -434,4 +495,5 @@ function generateTeamCards(team, teamID) {
     })
 };
 
+window.onload = generateTeamCards(teamMembers, 'teamCards'), generateTeamCards(antiTeamMembers, 'antiTeamCards');
 window.onload = generateTeamCards(teamMembers, 'teamCards'), generateTeamCards(antiTeamMembers, 'antiTeamCards');
