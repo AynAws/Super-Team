@@ -1,4 +1,4 @@
-const n = x => Math.floor(Math.random() * x);
+const n = x => Math.floor(Math.random() * x); // Random number gen with the number cap as a parameter x
 
 // Generates prefix, first name, middle name/nickname, last name, suffix
 function nameGen() {
@@ -159,7 +159,7 @@ function nameGen() {
     return name;
 };
 
-function positionGen() {
+function directionGen() {
     const positionArray = [
         'Benchwarmer',
         'Forward',
@@ -194,7 +194,7 @@ function skillsGen() {
     return [skill1, skill2, skill3];
 };
 
-function quipGen() {
+function quipGen() { // DONT FORGET
     const quipArray = [
     ]
 };
@@ -274,15 +274,101 @@ const teamMembers =  [
     }
 ];
 
-teamMembers.forEach(member => {
+const antiTeamMembers =  [
+    {
+        name: 'placeholder',
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.'
+    },
+    {
+        name: 'placeholder',
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.'
+    },
+    {
+        name: 'placeholder',
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.'
+    },
+    {
+        name: 'placeholder',
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.'
+    },
+    {
+        name: 'placeholder',
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.'
+    },
+    {
+        name: 'placeholder',
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.'
+    },
+    {
+        name: 'placeholder',
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.'
+    },
+    {
+        name: 'placeholder',
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.'
+    },
+    {
+        name: 'placeholder',
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.'
+    }
+];
+
+teamMembers.forEach((member, index) => {
     member.name = nameGen();
-    member.position = positionGen(); // Might change positions to not change
+    switch (index) {
+        case 0:
+        case 1:
+            member.position = directionGen();
+            break;
+    }
     member.skills = skillsGen();
 });
 
-function generateTeamCards() {
-    const teamCardsContainer = document.getElementById('teamCards');
-    teamMembers.forEach(member => {
+antiTeamMembers.forEach((antiMember, index) => {
+    let antiName = () => antiMember.name = nameGen();
+    let antiPos = () => antiMember.position = nameGen();
+    let antiSkill = () => antiMember.name = nameGen();
+})
+
+function generateTeamCards(team, teamID) {
+    const teamCardsContainer = document.getElementById(teamID);
+    team.forEach(member => {
         const card = document.createElement('div');
         card.classList.add('col-md-4');
         // Styling card based off of position
@@ -330,4 +416,4 @@ function generateTeamCards() {
     })
 };
 
-window.onload = generateTeamCards();
+window.onload = generateTeamCards(teamMembers, 'teamCards'), generateTeamCards(antiTeamMembers, 'antiTeamCards');
