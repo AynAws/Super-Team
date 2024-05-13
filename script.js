@@ -94,7 +94,10 @@ function nameGen() {
         'Youssef',
         'Muhammad',
         'Malcolm',
-        'Malik'
+        'Malik',
+        'Trevor',
+        'Layci',
+        'Pranshu'
     ];
     first = firstName[n(firstName.length)];
 
@@ -132,7 +135,9 @@ function nameGen() {
         'Ali',
         'X',
         'Little',
-        'Shabazz'
+        'Shabazz',
+        'Barrett',
+        'Acquista'
     ];
     last = lastName[n(lastName.length)];
 
@@ -159,7 +164,7 @@ function nameGen() {
     return name;
 };
 
-function directionGen() {
+function positionGen() {
     const positionArray = [
         'Benchwarmer',
         'Forward',
@@ -354,7 +359,7 @@ teamMembers.forEach((member, index) => {
     switch (index) {
         case 0:
         case 1:
-            member.position = directionGen();
+            member.position = positionGen();
             break;
     }
     member.skills = skillsGen();
