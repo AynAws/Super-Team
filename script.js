@@ -1,4 +1,8 @@
-function name() {
+const n = x => Math.floor(Math.random() * x); // Random number gen with the number cap as a parameter x
+
+// Generates prefix, first name, middle name/nickname, last name, suffix
+function nameGen() {
+    let pre, suf, first, last, nick;
     const prefix = [
         'God Emperor ',
         'Padishah Emperor ',
@@ -10,8 +14,18 @@ function name() {
         'Baron ',
         'Count ',
         'Viscount ',
-        'St. '
-    ]
+        'St. ',
+        'Lil ',
+        'Hodor ',
+        'Lady ',
+        'Duchess',
+        'Empress ',
+        'Queen ',
+        'Baroness ',
+        'Countess ',
+        'Viscountess '
+    ];
+
     const suffix = [
         ' Jr.',
         ' Sr.',
@@ -19,19 +33,19 @@ function name() {
         ' VI',
         ' Ph.D.',
         ' M.D.',
-    ]
-    let x = Math.floor(Math.random() * 19);
-    if (x === 19) {
-        let pre = prefix[Math.floor(Math.random * prefix.length)];
+        ' Hodor'
+    ];
+    if (n(20) === 19) {
+        pre = prefix[n(prefix.length)];
     } else {
-        let pre = '';
+        pre = '';
     }
-    let y = Math.floor(Math.random() * 9);
-    if (y === 9) {
-        let suf = suffix[Math.floor(Math.random * suffix.length)];
+    if (n(10) === 9) {
+        suf = suffix[n(suffix.length)];
     } else {
-        let suf = '';
+        suf = '';
     }
+
     const firstName = [
         'Lionel',
         'Varys',
@@ -55,23 +69,228 @@ function name() {
         'Grisha',
         'Ymir',
         'Bartosz',
-        'Cristiano'
-    ]
-    let first = firstName[Math.floor(Math.random * firstName.length)];
+        'Cristiano',
+        'Levi',
+        'Gregory',
+        'Aaron',
+        'Brianna',
+        'Elizabeth',
+        'Emma',
+        'Gabrielle',
+        'Jake',
+        'Jayden',
+        'Kevin',
+        'Koustubha',
+        'Kyle',
+        'Mahek',
+        'Matthew',
+        'Owen',
+        'Sophia',
+        'Sunay',
+        'Viacheslav',
+        'Walder',
+        'Hodor',
+        'Lelouch',
+        'Youssef',
+        'Muhammad',
+        'Malcolm',
+        'Malik',
+        'Trevor',
+        'Layci',
+        'Pranshu'
+    ];
+    first = firstName[n(firstName.length)];
+
     const lastName = [
         'Harkonnen',
         'Tiedemann',
         'Atreides',
         'Messi',
-        'Ronaldo'
+        'Ronaldo',
+        'Ackerman',
+        'Stark',
+        'Clegane',
+        'Kilgore',
+        'Mathew',
+        'Nisenson',
+        'Pinto',
+        'Bootnik',
+        'Reznik',
+        'Kozlovsky',
+        'Tarantola',
+        'Cherichello',
+        'Yau',
+        'Piccinich',
+        'Kolla',
+        'Rabkin',
+        'Mahesh',
+        'Passantino',
+        'Chiu',
+        'Antushevich',
+        'Bhatt',
+        'Kostenko',
+        'Frey',
+        'Hodor',
+        'Lamperogue',
+        'Ali',
+        'X',
+        'Little',
+        'Shabazz',
+        'Barrett',
+        'Acquista'
+    ];
+    last = lastName[n(lastName.length)];
+
+    const nickName = [
+        '“The Hound”',
+        '“Littlefinger”',
+        '“The Undertaker”',
+        'De',
+        'Vi',
+        'ibn',
+        'bin',
+        'of the Knife',
+        '“Blackfish”',
+        '“Hodor”',
+        'Mohamed',
+        'el-'
+    ];
+    if (n(20) === 19) {
+        nick = ` ${nickName[n(nickName.length)]} `;
+    } else {
+        nick = ' ';
+    }
+    const name = pre + first + nick + last + suf;
+    return name;
+};
+
+function directionGen() {
+    const positionArray = [
+        'Benchwarmer',
+        'Forward',
+        'Backward',
+        'Midward',
+        'Upward',
+        'Downward',
+        'Leftward',
+        'Rightward',
+        'Ward',
+        'Hostage',
+        'KindaEastButNotReallyEastLikeMoreNortheastButNotAllTheWayNortheastward',
+        'Wardward',
+        'Hodor'
+    ];
+    const position = positionArray[n(positionArray.length)];
+    return position;
+};
+
+function skillsGen() {
+    const skillsArray = [
+        'Headbutting', 'Dribbling', 'Shooting', 'Passing', 'Charging', 'Hazardous Material Recovery'
     ]
-    let last = lastName[Math.floor(Math.random * lastName.length)];
-    return pre + first + last + suf;
-}
+    const skill1 = skillsArray[n(skillsArray.length)];
+    let newArray = skillsArray.filter(item => item !== skill1);
+
+    const skill2 = newArray[n(newArray.length)];
+    newArray = newArray.filter(item => item !== skill2);
+
+    const skill3 = newArray[n(newArray.length)];
+
+    return [skill1, skill2, skill3];
+};
+
+function quipGen() { // DONT FORGET
+    const quipArray = [
+    ]
+};
 
 const teamMembers =  [
     {
-        name: 'Lionel Messi',
+        name: nameGen(),
+        position: directionGen(),
+        skills: skillsGen(),
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.',
+        colour: 'yellow'
+    },
+    {
+        name: nameGen(),
+        position: directionGen(),
+        skills: skillsGen(),
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.',
+        colour: 'yellow'
+    },
+    {
+        name: nameGen(),
+        position: directionGen(),
+        skills: skillsGen(),
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.',
+        colour: 'yellow'
+    },
+    {
+        name: nameGen(),
+        position: directionGen(),
+        skills: skillsGen(),
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.',
+        colour: 'yellow'
+    },
+    {
+        name: nameGen(),
+        position: directionGen(),
+        skills: skillsGen(),
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.',
+        colour: 'yellow'
+    },
+    {
+        name: nameGen(),
+        position: directionGen(),
+        skills: skillsGen(),
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.',
+        colour: 'yellow'
+    },
+    {
+        name: nameGen(),
+        position: directionGen(),
+        skills: skillsGen(),
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.',
+        colour: 'yellow'
+    },
+    {
+        name: nameGen(),
+        position: directionGen(),
+        skills: skillsGen(),
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.',
+        colour: 'yellow'
+    },
+    {
+        name: nameGen(),
+        position: directionGen(),
+        skills: skillsGen(),
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.',
+        colour: 'yellow'
+    },
+];
+
+const antiTeamMembers =  [
+    {
+        name: 'placeholder',
         position: 'Forward',
         skills: ['Dribbling', 'Shooting', 'Passing'],
         strengths: 'Ball control',
@@ -79,8 +298,64 @@ const teamMembers =  [
         biography: 'lorem ipsum dolor sit amet consectuer tet.'
     },
     {
-        name: 'Lionel Messi Jr',
-        position: 'Defender',
+        name: 'placeholder',
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.'
+    },
+    {
+        name: 'placeholder',
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.'
+    },
+    {
+        name: 'placeholder',
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.'
+    },
+    {
+        name: 'placeholder',
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.'
+    },
+    {
+        name: 'placeholder',
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.'
+    },
+    {
+        name: 'placeholder',
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.'
+    },
+    {
+        name: 'placeholder',
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading ability',
+        biography: 'lorem ipsum dolor sit amet consectuer tet.'
+    },
+    {
+        name: 'placeholder',
+        position: 'Forward',
         skills: ['Dribbling', 'Shooting', 'Passing'],
         strengths: 'Ball control',
         weaknesses: 'Heading ability',
@@ -88,20 +363,41 @@ const teamMembers =  [
     }
 ];
 
-function generateTeamCards() {
-    const teamCardsContainer = document.getElementById('teamCards');
-    teamMembers.forEach(member => {
+/*teamMembers.forEach((member, index) => {
+    member.name = nameGen();
+    switch (index) {
+        case 0:
+        case 1:
+            member.position = directionGen();
+            member.colour = 'yellow';
+            break;
+        default:
+            member.colour = 'grey';
+            break;
+    }
+    member.skills = skillsGen();
+});*/
+
+antiTeamMembers.forEach((antiMember, index) => {
+    let antiName = () => antiMember.name = nameGen();
+    let antiPos = () => antiMember.position = nameGen();
+    let antiSkill = () => antiMember.name = nameGen();
+})
+
+function generateTeamCards(team, teamID) {
+    const teamCardsContainer = document.getElementById(teamID);
+    team.forEach(member => {
         const card = document.createElement('div');
         card.classList.add('col-md-4');
         // Styling card based off of position
-        let backgroundColor
+        let backgroundColor;
 
-        switch (member.position.toLowerCase()) {
-            case 'forward':
-              backgroundColor = '#ffc107'; // Yellow for forwards
+        switch (member.colour.toLowerCase()) { // Needs updating when I make the new positions
+            case 'yellow':
+              backgroundColor = '#ffc107'; // Marigold
               break;
-            case 'midfielder':
-              backgroundColor = '#28a745'; // Green for midfielders
+            case 'antiYellow':
+              backgroundColor = '#2169EA'; // Opposite of previous (Bluetiful)
               break;
             case 'defender':
               backgroundColor = '#007bff'; // Blue for defenders
@@ -138,4 +434,4 @@ function generateTeamCards() {
     })
 };
 
-window.onload = generateTeamCards();
+window.onload = generateTeamCards(teamMembers, 'teamCards'), generateTeamCards(antiTeamMembers, 'antiTeamCards');
